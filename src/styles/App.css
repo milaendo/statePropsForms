@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: rgb(61,61,61);
+  color: white;
 }
 
 .App-header {
@@ -20,4 +22,39 @@
 .form{
   width:700px;
   text-align: left;
+  padding: 90px;
+}
+.listWrap {
+	text-align: left;
+	text-transform: capitalize;
+	background-color: rgb(124,185,232);
+
+}
+.jumbotron {
+	background-color: rgb(50,129,205);
+	color: white;
+	height:30px;
+	width:900px;
+	margin: auto;
+}
+.display {
+	padding: 90px;
+	font-weight: bold;	
+	text-shadow: 2px 2px gray;
+}
+.update {
+	margin:20px;
+	background-color: rgb(94,183,92);
+}
+input {
+	border-radius: 5px;
+}
+textarea {
+	border-radius: 5px;
+}
+button {
+	border-radius: 5px;
+}
+.submit {
+	background-color: rgb(42,118,216);
 }

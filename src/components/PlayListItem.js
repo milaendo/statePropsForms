@@ -4,11 +4,13 @@ class PlayListItem extends React.Component{
 	render(){
 		return(
 			<div className='display'>
-			  <button>update</button>
-			  <ul>
-			  	<li> new stuff 1 </li>
-			  	<li> new stuff 2 </li>
-			  </ul>
+			  <button className='update'>update list</button>
+			<div className='listWrap'>
+			  <div>User:</div>
+			  <div>Artist/Band:</div>
+			  <div>Title:</div>
+			  <div>Notes:</div>
+			</div>
 			</div>
 		)
 	}

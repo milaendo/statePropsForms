@@ -14,8 +14,7 @@ class PlayListForm extends React.Component{
 	handleNameChange = (e) => {
 		this.setState ({
 			username: e.target.value
-		})
-		
+		})	
 	}
 	handleBandChange = (e) => {
 		this.setState ({
@@ -32,6 +31,12 @@ class PlayListForm extends React.Component{
 			notes: e.target.value
 		})
 	}
+	handleSubmit = (e) => {
+      e.preventDefault()
+      this.setState({
+        
+      })
+  	}
 	render(){
 		return(
 			<div className='form'>
@@ -54,10 +59,10 @@ class PlayListForm extends React.Component{
 			    <div>
 			    	<label>Notes about Song:</label>
 			    	<br/>
-			    	<textarea onChange={this.handleSongChange}value={this.state.notes}rows='4' cols='50'/>
+			    	<textarea onChange={this.handleNoteChange}value={this.state.notes}rows='4' cols='50'/>
 			    </div>
 			    </form>
-			    <button>Submit</button>
+			    <button className='submit'>Submit</button>
 			</div>
 		)
 	}
