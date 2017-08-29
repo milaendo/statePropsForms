@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 class PlayListForm extends React.Component{
-	constructor(){
-		super()
+	constructor(props){
+		super(props)
 		this.state = {
 			username: '',
 			bandname: '',
@@ -31,12 +31,29 @@ class PlayListForm extends React.Component{
 			notes: e.target.value
 		})
 	}
-	handleSubmit = (e) => {
-      e.preventDefault()
-      this.setState({
-        
-      })
-  	}
+	addToList = (e) => {
+	    e.preventDefault();
+	    this.setState({username: e.target.value, song: e.target.value, bandname: e.target.value, notes: e.target.value});
+	    let listItem = JSON.stringify(this.state);
+
+	    fetch("https://tiny-lasagna-server.herokuapp.com/collections/playlisting", {
+	      method: "POST",
+	      body: listItem,
+	      headers: {
+	        'Accept': 'application/json',
+	        'Content-Type': 'application/json'
+	    }
+	  }
+	  ).then(response => {
+	    console.log(response, "yay");
+
+	  }).catch(err => {
+	    console.log(err, "boo!");
+	  });
+	  this.setState({username: '', notes: '', bandname: '', song:''});
+	}
+
+
 	render(){
 		return(
 			<div className='form'>
@@ -62,7 +79,7 @@ class PlayListForm extends React.Component{
 			    	<textarea onChange={this.handleNoteChange}value={this.state.notes}rows='4' cols='50'/>
 			    </div>
 			    </form>
-			    <button className='submit'>Submit</button>
+			    <button onSubmit={this.addToList} className='submit'>Submit</button>
 			</div>
 		)
 	}
