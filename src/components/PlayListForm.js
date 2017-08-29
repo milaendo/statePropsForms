@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class PlayListForm extends React.Component{
+class PlayListForm extends Component{
 	constructor(props){
 		super(props)
 		this.state = {
