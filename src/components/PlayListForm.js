@@ -57,7 +57,7 @@ class PlayListForm extends React.Component{
 	render(){
 		return(
 			<div className='form'>
-				<form>
+				<form onSubmit={this.addToList}>
 				<div>
 					<label>User Name:</label>
 					<br/>
@@ -78,8 +78,9 @@ class PlayListForm extends React.Component{
 			    	<br/>
 			    	<textarea onChange={this.handleNoteChange}value={this.state.notes}rows='4' cols='50'/>
 			    </div>
+			    <button type="submit" className='submit'>Submit</button>
 			    </form>
-			    <button onSubmit={this.addToList} className='submit'>Submit</button>
+			  
 			</div>
 		)
 	}

@@ -33,6 +33,7 @@ class PlayList extends Component{
             {this.state.song.map( (item) => (  
                 <PlaylistItem song={item}/>
             ))}
+            <button className='update'>update list</button>
             </div>
             
         )
